@@ -27,10 +27,20 @@ public class MyFilter implements GlobalFilter {
         HttpHeaders headers = request.getHeaders();
         Set<String> keySet = headers.keySet();
 
+//        HttpHeaders headers = request.getHeaders();
+//        Set<String> keySet = headers.keySet();
+           
         keySet.forEach(key -> {
             List<String> values = headers.get(key);
             logger.info(key + "::" + values);
         });
+        
+//        keySet.forEach(key -> {
+//            List<String> values = headers.get(key);
+//            logger.info(key + "::" + values);
+//        });
+        
+        
 
         return chain.filter(exchange);
     }
